@@ -1,0 +1,388 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pragma Dental Laboratory — Mockup</title>
+  <meta name="description" content="Pragma Dental Laboratory — dark, modern mockup site with expanded sections." />
+  <style>
+    :root{
+      --bg:#0b1020;
+      --surface:rgba(255,255,255,0.04);
+      --surfaceSolid:#0f162d;
+      --text:#ffffff;
+      --muted:#a9b4c7;
+      --accent:#61B5E6;
+      --accentDark:#3A9BD1;
+      --border:#1f2a44;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.5}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1120px;margin:0 auto;padding:0 16px}
+    .header{position:sticky;top:0;z-index:50;background:rgba(5,8,20,0.75);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+    .nav{display:none;gap:24px;font-size:14px;color:rgba(255,255,255,0.8)}
+    .btn{display:inline-flex;align-items:center;gap:8px;border-radius:16px;padding:10px 14px;font-size:14px;font-weight:600;transition:transform .1s ease,opacity .2s ease,background .2s ease}
+    .btn:active{transform:translateY(1px)}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-primary:hover{background:var(--accentDark)}
+    .btn-outline{border:1px solid var(--border);color:#fff}
+    .btn-outline:hover{background:rgba(255,255,255,0.1)}
+    .mobile-toggle{border-radius:12px;padding:8px;background:transparent;border:1px solid transparent;color:#fff}
+    .mobile-toggle:hover{background:rgba(255,255,255,0.1)}
+    .mobile-menu{display:none;border-top:1px solid var(--border);background:rgba(5,8,20,0.95)}
+    .mobile-menu a{display:block;padding:12px;border-radius:12px}
+    .pill{display:inline-flex;align-items:center;border:1px solid var(--border);background:#101733;border-radius:999px;padding:6px 12px;font-size:11px;letter-spacing:.04em}
+    .section{padding:56px 0}
+    .section .heading{font-size:28px;font-weight:700;margin:0}
+    .muted{color:var(--muted)}
+    .grid{display:grid;gap:16px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid-6{grid-template-columns:repeat(6,minmax(0,1fr))}
+    @media (min-width:640px){.section{padding:80px 0}.heading{font-size:32px}}
+    @media (min-width:768px){.nav{display:flex}.only-mobile{display:none}}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:20px;backdrop-filter:blur(6px)}
+    .hero{position:relative;overflow:hidden}
+    .ring{position:absolute;left:50%;top:-140px;width:520px;height:520px;transform:translateX(-50%);border-radius:9999px;filter:blur(40px);opacity:.25;background:radial-gradient(ellipse at center, rgba(97,181,230,0.25), transparent 60%)}
+    .gallery-tile{aspect-ratio:1/1;border:1px solid var(--border);border-radius:20px;background:var(--surfaceSolid);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);font-size:12px}
+    .footer{border-top:1px solid var(--border);padding:40px 0;color:rgba(255,255,255,0.7)}
+    .row{display:flex;gap:12px;align-items:center;justify-content:space-between}
+    .row.wrap{flex-wrap:wrap}
+    .quick-links a{text-decoration:underline}
+    /* simple util */
+    .mt-2{margin-top:8px}.mt-3{margin-top:12px}.mt-4{margin-top:16px}.mt-6{margin-top:24px}.mt-8{margin-top:32px}
+    .text-center{text-align:center}
+    .text-sm{font-size:14px}
+    .text-xs{font-size:12px}
+    .fw-600{font-weight:600}
+    .fw-700{font-weight:700}
+    .cta-grid{display:grid;gap:12px}
+    @media(min-width:640px){.cta-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container row">
+      <a href="#home" class="row" style="gap:12px">
+        <img src="https://pragmadentallab.co.uk/wp-content/uploads/2022/01/pragma_dental_logo_white.png" alt="Pragma Dental Laboratory" style="height:32px" />
+      </a>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#materials">Materials</a>
+        <a href="#logistics">Logistics</a>
+        <a href="#downloads">Downloads</a>
+        <a href="#faqs">FAQs</a>
+        <a href="#articles">Articles</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="only-desktop">
+        <a class="btn btn-outline only-desktop" href="#contact">Call Us</a>
+        <a class="btn btn-primary only-desktop" href="#downloads">Lab Prescription</a>
+      </div>
+      <button class="mobile-toggle only-mobile" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+    <div class="mobile-menu only-mobile" id="mobileMenu">
+      <div class="container" style="padding:12px 16px 20px">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#materials">Materials</a>
+        <a href="#logistics">Logistics</a>
+        <a href="#downloads">Downloads</a>
+        <a href="#faqs">FAQs</a>
+        <a href="#articles">Articles</a>
+        <a href="#contact">Contact</a>
+        <div class="cta-grid mt-3">
+          <a class="btn btn-outline" href="#contact">Call Us</a>
+          <a class="btn btn-primary" href="#downloads">Lab Prescription</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero section">
+      <div class="container text-center">
+        <span class="pill">Surrey • Denture Specialists</span>
+        <h1 class="heading mt-4">We create <span style="color:var(--accent)">beautiful smiles</span></h1>
+        <p class="muted mt-3">Qualified, professional dental technicians providing swift repairs and natural-looking dentures in a calm, caring environment.</p>
+        <div class="mt-6">
+          <a class="btn btn-primary" href="#contact">Book a Free Consultation →</a>
+          <a class="btn btn-outline" href="#services" style="margin-left:8px">Explore Services</a>
+        </div>
+      </div>
+      <div class="ring" aria-hidden="true"></div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <div class="row wrap">
+          <div>
+            <h2 class="heading">Quality Denture Services</h2>
+            <p class="muted mt-2 text-sm">Made in-house by our experienced technicians using modern materials and techniques.</p>
+          </div>
+          <a class="btn btn-outline" href="#downloads">Dentist Prescription Form</a>
+        </div>
+
+        <div class="grid mt-6" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+          <div class="card">
+            <h3 class="fw-700">Swift Denture Repairs</h3>
+            <p class="muted text-sm mt-2">While‑you‑wait repairs in about an hour at our laboratory.</p>
+            <div class="muted text-sm mt-3">✔ Fully guaranteed</div>
+          </div>
+          <div class="card">
+            <h3 class="fw-700">Complete Dentures</h3>
+            <p class="muted text-sm mt-2">Full-arch solutions customised for comfort, fit and aesthetics.</p>
+            <div class="muted text-sm mt-3">✔ Fully guaranteed</div>
+          </div>
+          <div class="card">
+            <h3 class="fw-700">Acrylic Dentures</h3>
+            <p class="muted text-sm mt-2">Removable replacements designed to restore function and smile.</p>
+            <div class="muted text-sm mt-3">✔ Fully guaranteed</div>
+          </div>
+          <div class="card">
+            <h3 class="fw-700">Flexible Dentures</h3>
+            <p class="muted text-sm mt-2">High‑standard flexible options processed with premium materials.</p>
+            <div class="muted text-sm mt-3">✔ Fully guaranteed</div>
+          </div>
+          <div class="card">
+            <h3 class="fw-700">Independent/Private</h3>
+            <p class="muted text-sm mt-2">Subtle gum characterisation and natural appearance on duplicates.</p>
+            <div class="muted text-sm mt-3">✔ Fully guaranteed</div>
+          </div>
+          <div class="card">
+            <h3 class="fw-700">Nature’s Touch Finish</h3>
+            <p class="muted text-sm mt-2">Beautifully high standard with quality natural teeth and acrylic.</p>
+            <div class="muted text-sm mt-3">✔ Fully guaranteed</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container grid" style="grid-template-columns:1.2fr 1fr;gap:20px">
+        <div>
+          <span class="pill">About Pragma</span>
+          <h2 class="heading mt-3">Experienced technicians. Patient-first results.</h2>
+          <p class="muted mt-3">With decades of combined experience, our laboratory blends craftsmanship with modern materials to deliver dentures that look natural and feel comfortable. We collaborate closely with dentists and communicate proactively at every step.</p>
+          <div class="grid grid-3 mt-6">
+            <div class="text-center">
+              <div class="fw-700" style="font-size:24px;color:var(--accent)">20+</div>
+              <div class="text-sm" style="color:rgba(255,255,255,0.7)">Years experience</div>
+            </div>
+            <div class="text-center">
+              <div class="fw-700" style="font-size:24px;color:var(--accent)">5★</div>
+              <div class="text-sm" style="color:rgba(255,255,255,0.7)">Client rating</div>
+            </div>
+            <div class="text-center">
+              <div class="fw-700" style="font-size:24px;color:var(--accent)">48–72h</div>
+              <div class="text-sm" style="color:rgba(255,255,255,0.7)">Typical turnaround</div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="gallery-tile" style="aspect-ratio:4/3">Team / lab photo</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="heading">Case Gallery</h2>
+          <p class="muted mt-2">Before/after results that restore function and confidence.</p>
+        </div>
+        <div class="grid mt-6" style="grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px">
+          <div class="gallery-tile">Add photo</div>
+<div class="gallery-tile">Add photo</div>
+<div class="gallery-tile">Add photo</div>
+<div class="gallery-tile">Add photo</div>
+<div class="gallery-tile">Add photo</div>
+<div class="gallery-tile">Add photo</div>
+<div class="gallery-tile">Add photo</div>
+<div class="gallery-tile">Add photo</div>
+<div class="gallery-tile">Add photo</div>
+<div class="gallery-tile">Add photo</div>
+<div class="gallery-tile">Add photo</div>
+<div class="gallery-tile">Add photo</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="materials" class="section">
+      <div class="container grid" style="grid-template-columns:1fr 1fr;gap:16px">
+        <div>
+          <span class="pill">Materials & Technology</span>
+          <h2 class="heading mt-3">Premium materials • Consistent results</h2>
+          <p class="muted mt-2">We select materials for durability, comfort and lifelike aesthetics, processed with controlled, repeatable protocols.</p>
+        </div>
+        <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+          <div class="card">
+            <h3 class="fw-700">Acrylics & flexible bases</h3>
+            <p class="muted text-sm mt-2">High-impact acrylics and flexible options for comfort and longevity.</p>
+          </div>
+          <div class="card">
+            <h3 class="fw-700">Shade & characterisation</h3>
+            <p class="muted text-sm mt-2">Layered gingival characterisation and premium denture teeth.</p>
+          </div>
+          <div class="card">
+            <h3 class="fw-700">QA protocols</h3>
+            <p class="muted text-sm mt-2">Multi-point checks at set stages ensure consistent outcomes.</p>
+          </div>
+          <div class="card">
+            <h3 class="fw-700">Digital where it helps</h3>
+            <p class="muted text-sm mt-2">We adopt digital tools pragmatically to support craftsmanship.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="logistics" class="section">
+      <div class="container grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+        <div class="card">
+          <h3 class="fw-700">Courier collections</h3>
+          <p class="muted text-sm mt-2">Daily routes across Surrey and surrounding areas.</p>
+        </div>
+        <div class="card">
+          <h3 class="fw-700">Turnaround times</h3>
+          <p class="muted text-sm mt-2">Repairs while you wait. Standard cases 48–72h; complex on quote.</p>
+        </div>
+        <div class="card">
+          <h3 class="fw-700">Practice onboarding</h3>
+          <p class="muted text-sm mt-2">Simple account setup, welcome pack, and clear price list.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="downloads" class="section">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="heading">Downloads</h2>
+          <p class="muted mt-2">Everything you need to work with us.</p>
+        </div>
+        <div class="grid mt-6" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+          <div class="card">
+            <h3 class="fw-700">Lab prescription form</h3>
+            <p class="muted text-sm mt-2">PDF for dentists to prescribe cases.</p>
+            <a class="btn btn-primary mt-3" href="#">Download PDF</a>
+          </div>
+          <div class="card">
+            <h3 class="fw-700">Price list</h3>
+            <p class="muted text-sm mt-2">Transparent pricing by service.</p>
+            <a class="btn btn-primary mt-3" href="#">Download PDF</a>
+          </div>
+          <div class="card">
+            <h3 class="fw-700">Welcome pack</h3>
+            <p class="muted text-sm mt-2">Onboarding checklist and courier map.</p>
+            <a class="btn btn-primary mt-3" href="#">Download PDF</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faqs" class="section">
+      <div class="container" style="max-width:760px">
+        <h2 class="heading text-center">FAQs</h2>
+        <div class="mt-6">
+          <div class="card"><div class="fw-600">How fast can you repair a denture?</div><div class="muted text-sm mt-2">Most repairs can be completed while you wait (about an hour).</div></div>
+          <div class="card mt-3"><div class="fw-600">Do you accept private work?</div><div class="muted text-sm mt-2">Yes, we provide independent/private denture services with natural aesthetics.</div></div>
+          <div class="card mt-3"><div class="fw-600">What areas do you cover?</div><div class="muted text-sm mt-2">Regular collections across Surrey; courier options available beyond.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="articles" class="section">
+      <div class="container">
+        <div class="row wrap">
+          <div>
+            <h2 class="heading">Articles & Guides</h2>
+            <p class="muted text-sm mt-2">Resources for dentists and patients.</p>
+          </div>
+          <a class="btn btn-outline" href="#">View all</a>
+        </div>
+        <div class="grid mt-6" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+          <div class="card">
+            <h3 class="fw-700">Denture aftercare: do’s & don’ts</h3>
+            <p class="muted text-sm mt-2">Help patients keep their new smile comfortable and clean.</p>
+            <a class="btn" href="#" style="padding-left:0">Read more →</a>
+          </div>
+          <div class="card">
+            <h3 class="fw-700">Impression tips for better fit</h3>
+            <p class="muted text-sm mt-2">A quick checklist to reduce remakes and chair time.</p>
+            <a class="btn" href="#" style="padding-left:0">Read more →</a>
+          </div>
+          <div class="card">
+            <h3 class="fw-700">Choosing between acrylic and flexible</h3>
+            <p class="muted text-sm mt-2">When each option makes sense — pros and cons.</p>
+            <a class="btn" href="#" style="padding-left:0">Read more →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="card" style="padding:0">
+          <div class="grid" style="grid-template-columns:1.5fr 1fr">
+            <div style="padding:24px">
+              <span class="pill">Get in touch</span>
+              <h3 class="mt-3" style="font-size:22px" >Book a free consultation</h3>
+              <p class="muted mt-2">Call us directly or send a message — we’ll reply promptly.</p>
+              <div class="grid mt-6" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+                <a class="btn btn-outline" href="tel:0774260558">
+                  Call <span class="text-xs muted">077 4260 558</span>
+                </a>
+                <a class="btn btn-primary" href="#">
+                  Send us a message
+                </a>
+              </div>
+            </div>
+            <div style="background:linear-gradient(to bottom, rgba(255,255,255,0.1), transparent);padding:24px;border-left:1px solid var(--border)">
+              <h4 class="fw-700">Visit us</h4>
+              <div class="muted text-sm mt-3">Laboratory address line, Surrey</div>
+              <div class="muted text-sm mt-2">info@pragmadentallab.co.uk</div>
+              <div class="gallery-tile mt-4" style="aspect-ratio:16/9">Map / image</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container row wrap">
+      <div class="row" style="gap:12px">
+        <img src="https://pragmadentallab.co.uk/wp-content/uploads/2022/01/pragma_dental_logo_white.png" alt="Pragma Dental Laboratory" style="height:28px" />
+        <span class="text-sm">© <span id="year"></span> Pragma Dental Laboratory</span>
+      </div>
+      <div class="row" style="gap:16px">
+        <a href="#" class="text-sm">Facebook</a>
+        <a href="#" class="text-sm">Instagram</a>
+        <a href="#downloads" class="text-sm">Downloads</a>
+        <a href="#faqs" class="text-sm">FAQs</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn && btn.addEventListener('click', () => {
+      const shown = menu.style.display === 'block';
+      menu.style.display = shown ? 'none' : 'block';
+      btn.textContent = shown ? '☰' : '✕';
+    });
+  </script>
+</body>
+</html>
